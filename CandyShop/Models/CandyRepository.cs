@@ -36,6 +36,14 @@ namespace CandyShop.Models
                 .OrderBy(c => c.CandyId);
             
         }
+
+        public IEnumerable<Candy> GetCandiesBySeller(string sellerName)
+        {
+            return _appDbContext.Candies.Where(c => c.Seller.SellerName == sellerName)
+                .Include(c => c.Seller)
+                .OrderBy(c => c.CandyId);
+        }
+
         public Candy GetCandyById(int candyId)
         {
             return _appDbContext.Candies.Find(candyId);

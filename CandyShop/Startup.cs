@@ -38,6 +38,7 @@ namespace CandyShop
             services.AddScoped<ICandyRepository, CandyRepository>();
             services.AddScoped<ShoppingCart>(sc => ShoppingCart.GetCart(sc));
             services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<ISellerRepository, SellerRepository>();
 
             services.AddHttpContextAccessor();
             services.AddSession();
