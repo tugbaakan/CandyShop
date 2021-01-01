@@ -9,6 +9,7 @@ namespace CandyShop.Models
     {
         IEnumerable<Candy> GetAllCandy { get; }
         IEnumerable<Candy> GetAllCandyOnSale { get; }
+        IEnumerable<Candy> GetCandiesByCategory(string categoryName);
         Candy GetCandyById(int CandyId);
     }
 }
